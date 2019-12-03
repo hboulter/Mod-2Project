@@ -1,1 +1,9 @@
-<h1>Testing Children path</h1>
+<h3>All Children</h3>
+
+<ul>
+    <%@children.each do |child|%>
+    <li><%= link_to child.name, child%></li>
+    <%end%>
+
+
+</ul>
