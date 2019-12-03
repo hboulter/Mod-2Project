@@ -1,3 +1,4 @@
+
 <!-- Masthead -->
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
@@ -216,5 +217,14 @@
       </div>
 
     </div>
-  </section>
+</section>
+<h3>All Children</h3>
+
+<ul>
+    <%@children.each do |child|%>
+    <li><%= link_to child.name, child%></li>
+    <%end%>
+
+
+</ul>
 
