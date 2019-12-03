@@ -1,0 +1,23 @@
+<h1><%=@child.name%></h1>
+
+<h2>Age: <%= @child.age %></h2>
+<h2>Bio: <%= @child.bio %></h2>
+
+
+<ul>
+  <% @wishlists.each do |wishlist|  %>
+  <li>
+  <%= link_to wishlist.toy.name, wishlist.toy.link %>
+  </li>
+  <%end%>
+
+</ul>
+
+<h3>Would you like to make a donation today?</h3>
+
+<%= form_with model: @donation do |f| %>
+<%= collection_select(:donation, :toy_id, @toys, :id, :name) %>  <%= f.submit "Create" %>
+<% end %>
+
+
+
