@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
   def create
-    @user = User.new(user_params(:username, :email, :password))
+    @user = User.new(:username, :email, :password))
     if @user.valid?
       @user.save
       redirect_to children_path
     else 
-      redirect_to new
+      redirect_to children_path
     end
   end 
 
