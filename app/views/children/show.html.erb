@@ -1,5 +1,9 @@
 <h1><%= @child.name %></h1>
 
+<div style="width:400px; height:auto">  
+<%= image_tag(@child.image, style: 'width: 100%') %>
+</div>
+
 <h2>Age: <%= @child.age %></h2>
 <h2>Bio: <%= @child.bio %></h2>
 
@@ -19,6 +23,4 @@
 <%= collection_select(:donation, :toy_id, @toys, :id, :name) %>  
 <%= f.submit "Create" %>
 <% end %><br>
-  
-<%= image_tag(@child.image) %>
 

@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  
+  def index
+    @users = User.all
+  end
+  
+  def show
+    @donations = Donation.all
+  end
 
   def create
     @user = User.new(user_params(:username, :email, :password))
@@ -6,11 +14,9 @@ class UsersController < ApplicationController
       @user.save
       redirect_to children_path
     else 
-      redirect_to new
+      redirect_to children_path
     end
   end 
-
-
 
   private
 
