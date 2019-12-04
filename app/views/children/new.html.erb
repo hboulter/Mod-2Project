@@ -1,0 +1,23 @@
+<h1> Child in Need </h1>
+<%= form_for(@child) do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :age %>
+    <%= f.number_field :age %><br><br>
+
+    <%= f.label :bio %>
+    <%= f.text_field :bio %><br><br>
+
+    <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div><br>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+
+<% end %>
+  
