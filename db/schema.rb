@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_12_03_212104) do
 
+ActiveRecord::Schema.define(version: 2019_12_04_165127) do
+
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_212104) do
     t.integer "toy_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "message"
     t.index ["child_id"], name: "index_donations_on_child_id"
     t.index ["toy_id"], name: "index_donations_on_toy_id"
     t.index ["user_id"], name: "index_donations_on_user_id"

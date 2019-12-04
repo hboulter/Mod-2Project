@@ -9,9 +9,9 @@
 
 
 <ul>
-  <% @wishlists.each do |wishlist|  %>
+  <% @toys.each do |toy|  %>
   <li>
-  <%= link_to wishlist.toy.name, wishlist.toy.link %>
+  <%= link_to toy.name, toy.link %>
   </li>
   <%end%>
 
@@ -20,7 +20,10 @@
 <h3>Would you like to make a donation today?</h3>
 
 <%= form_with model: @donation do |f| %>
+<input type ="hidden" id="user_id", name = "user_id" value= <%="#{current_user.id}"%>>
+<input type ="hidden" id="child_id", name = "child_id" value= <%="#{@child.id}"%>>
 <%= collection_select(:donation, :toy_id, @toys, :id, :name) %>  
+<%= f.text_area :message %>
 <%= f.submit "Create" %>
 <% end %><br>
 
