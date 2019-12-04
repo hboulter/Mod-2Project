@@ -1,32 +1,39 @@
 class ChildrenController < ApplicationController
+    before_action :find_child, only: [:show]
 
     def index
         @children = Child.all
     end 
 
     def show
-        @child = find_child
         @wishlists = Wishlist.all
         @donation = Donation.new
         @toys = @child.toys
     end 
 
     def new
-      @donation = Donation.new
+        @donation = Donation.new
+        @child = Child.new
     end 
 
     def create
-      redirect_to children_path
+        @child = Child.new(child_params)
+        if @child.valid?
+            @child.save
+            redirect_to @child
+        else
+            render :new
+        end
     end 
 
 
     private
 
     def find_child
-        Child.find(params[:id])
+        @child = Child.find(params[:id])
     end 
 
-    def child_params(*args)
-        params.require(:child).permit(*args)
+    def child_params
+        params.require(:child).permit(:name, :age, :bio, :image)
     end 
 end
