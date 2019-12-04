@@ -9,6 +9,7 @@ class ChildrenController < ApplicationController
         @wishlists = Wishlist.all
         @donation = Donation.new
         @toys = @child.toys
+        @child_donations = Donation.all.select{|w| w.child_id == @child.id}
     end 
 
     def new

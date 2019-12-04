@@ -27,3 +27,13 @@
 <%= f.submit "Create" %>
 <% end %><br>
 
+<h3>Messages: <h3>
+<ul>
+ <% @child_donations.each do|cd|%>
+ <% donator = User.all.find{|u| u.id == cd.user_id}%>
+ <li>
+ <p><%= donator.username%> left you a message!<br> <%=cd.message%></p><br>
+ </li>
+
+ <%end%>
+ </ul>
