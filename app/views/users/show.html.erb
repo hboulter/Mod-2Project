@@ -1,1 +1,12 @@
-<h1>Hello</h1>
+<h1>Donations</h1>
+<ul>
+<% if @donations.size > 0 %>
+    <% @donations.each do |donation| %>
+    <li><%= donation.toy.name %></li>
+    <% end %> 
+<% else %>
+    You have not made any donations!<br><br>
+    <%= link_to 'Donate Now', children_path %>
+<% end %>
+</ul>
+
