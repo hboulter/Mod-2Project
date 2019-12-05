@@ -1,7 +1,7 @@
-# Wishlist.destroy_all
-# Child.destroy_all
-# Toy.destroy_all
-# User.destroy_all
+Wishlist.destroy_all
+Child.destroy_all
+Toy.destroy_all
+User.destroy_all
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -40,24 +40,24 @@
 #     {username:"wm", password:"987612345"},
 # ]
 
-wishlists = [
+# wishlists = [
 
-  {child_id:21, toy_id: 1},
-  {child_id:21, toy_id: 2},
-  {child_id:21, toy_id: 3},
-  {child_id:21, toy_id: 4},
+#   {child_id:21, toy_id: 1},
+#   {child_id:21, toy_id: 2},
+#   {child_id:21, toy_id: 3},
+#   {child_id:21, toy_id: 4},
 
-  # {child_id: 22, toy_id: 1},
-  # {child_id:22 , toy_id: 2},
-  # {child_id:22 , toy_id: 3},
-  # {child_id:22 , toy_id: 4},
+#   # {child_id: 22, toy_id: 1},
+#   # {child_id:22 , toy_id: 2},
+#   # {child_id:22 , toy_id: 3},
+#   # {child_id:22 , toy_id: 4},
 
-]
+# ]
 
-# children.each { |child| Child.create(child) }
-# toys.each { |toy| Toy.create(toy) }
-# users.each { |user| User.create(user) }
+# # children.each { |child| Child.create(child) }
+# # toys.each { |toy| Toy.create(toy) }
+# # users.each { |user| User.create(user) }
 
-wishlists.each { |wishlist| Wishlist.create(wishlist) }
+# wishlists.each { |wishlist| Wishlist.create(wishlist) }
 
 

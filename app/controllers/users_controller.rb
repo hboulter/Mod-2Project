@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = find_user
     @user_donations = Donation.all.select{|d| d.user_id == @user.id}
     @username = @user.username
+    @current_user = current_user
     
   end
 
