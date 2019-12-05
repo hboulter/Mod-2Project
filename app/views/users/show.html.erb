@@ -3,9 +3,9 @@
 <% if @donations.size > 0 %>
     <% @donations.each do |donation| %>
     <li><%= donation.toy.name %></li>
-    <% end %> 
+    <% end  %> 
 <% else %>
-    You have not made any donations!<br><br>
+    No donations have been made yet!<br><br>
     <%= link_to 'Donate Now', children_path %>
 <% end %>
 </ul>

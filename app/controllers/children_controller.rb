@@ -10,11 +10,24 @@ class ChildrenController < ApplicationController
         @donation = Donation.new
         @toys = @child.toys
         @child_donations = Donation.all.select{|w| w.child_id == @child.id}
+        
+    end 
+
+    def children_page
+
     end 
 
     def new
-        @donation = Donation.new
-        @child = Child.new
+      if current_user
+        if is_admin?
+          @donation = Donation.new
+          @child = Child.new
+        else
+          no_permission
+        end 
+      else 
+          no_permission
+      end 
     end 
 
     def create
@@ -36,5 +49,14 @@ class ChildrenController < ApplicationController
 
     def child_params
         params.require(:child).permit(:name, :age, :bio, :image)
+    end 
+
+    def is_admin?
+      current_user.username == 'Admin'
+    end 
+
+    def no_permission
+      flash[:error] = "You must have an admin account to add a child."
+          redirect_to children_path
     end 
 end

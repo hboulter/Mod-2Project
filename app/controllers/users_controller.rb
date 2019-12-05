@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   
   def show
     @user = find_user
-    @donations = Donation.all
+    @donations = Donation.select{|d| d.user_id == @user.id}
   end
 
   def new

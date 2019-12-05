@@ -1,5 +1,8 @@
 <h1>Sponsor A Child</h1>
 
+<%=link_to 'Add a new child', '/children/new'%>
+<%=link_to 'See our donators!', '/users'%>
+
 <ul>
     <%@children.each do |child|%>
     <li><%= link_to child.name, child%></li>
@@ -16,4 +19,4 @@
     <%= image_tag("children/7.jpg", width: '200px') %>
     <%= image_tag("children/8.png", width: '200px') %>
     <%= image_tag("children/9.png", width: '200px') %>
-    <%= image_tag("children/1.png", width: '200px') %>
+    <%= image_tag("children/10.png", width: '200px') %>
