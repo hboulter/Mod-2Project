@@ -42,15 +42,15 @@
 
 wishlists = [
 
-  {child_id:35, toy_id: 13},
-  {child_id:35, toy_id: 14},
-  {child_id:35, toy_id: 15},
-  {child_id:35, toy_id: 16},
+  {child_id:21, toy_id: 1},
+  {child_id:21, toy_id: 2},
+  {child_id:21, toy_id: 3},
+  {child_id:21, toy_id: 4},
 
-  {child_id: 21, toy_id: 1},
-  {child_id:22 , toy_id: 2},
-  {child_id:21 , toy_id: 3},
-  {child_id:22 , toy_id: 4},
+  # {child_id: 22, toy_id: 1},
+  # {child_id:22 , toy_id: 2},
+  # {child_id:22 , toy_id: 3},
+  # {child_id:22 , toy_id: 4},
 
 ]
 
