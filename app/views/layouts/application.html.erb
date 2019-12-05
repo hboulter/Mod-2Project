@@ -8,6 +8,41 @@
   </head>
 
   <body>
+    <div class="jumbotron" style="margin-bottom: 0px;">
+      <h1>TITLE</h1>
+      <p>Be kind. Donate to a child in need.</p>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <a class="navbar-brand"><%=image_tag("icon.jpg", width: '75px')%></a>
+      
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/sign_up">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/sign_in">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/users">Sponsors</a>
+        </li>
+    </nav>
+  <style>
+    body {
+        background-color:##e8fdff;
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 2px;
+        color: #3511BF;
+        font-weight: 400;
+    }
+</style>
 
         <header>
       <% if signed_in? %>
