@@ -60,3 +60,18 @@ class ChildrenController < ApplicationController
           redirect_to children_path
     end 
 end
+
+
+
+
+# <%= image_tag("children/1.png", width: '200px') %>
+# <%= image_tag("children/2.jpg", width: '200px') %>
+# <%= image_tag("children/3.png", width: '200px') %>
+# <%= image_tag("children/4.jpg", width: '200px') %>
+# <%= image_tag("children/5.png", width: '200px') %>
+# <br><br>
+# <%= image_tag("children/6.jpg", width: '200px') %>
+# <%= image_tag("children/7.jpg", width: '200px') %>
+# <%= image_tag("children/8.png", width: '200px') %>
+# <%= image_tag("children/9.png", width: '200px') %>
+# <%= image_tag("children/10.png", width: '200px') %>

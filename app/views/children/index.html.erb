@@ -4,27 +4,24 @@
 
 
 <%=link_to 'See our donators!', '/users'%><br>
+
+<%if current_user%>
 <%= link_to 'Your profile', "/users/#{current_user.id}"%>
+<%end%>
 
 <h1>Sponsor A Child</h1>
 
 <ul>
     <%@children.each do |child|%>
-    <li><%= link_to child.name, child%></li>
+    <h4><%= child.name%> :</h4>
+    <div style="width:150px; height:auto">  
+<%= link_to image_tag(child.image, style: 'width: 100%'), child %>
+</div>
+<br>
+
     <%end%>
 </ul><br>
 
 
 
-
-    <%= image_tag("children/1.png", width: '200px') %>
-    <%= image_tag("children/2.jpg", width: '200px') %>
-    <%= image_tag("children/3.png", width: '200px') %>
-    <%= image_tag("children/4.jpg", width: '200px') %>
-    <%= image_tag("children/5.png", width: '200px') %>
-    <br><br>
-    <%= image_tag("children/6.jpg", width: '200px') %>
-    <%= image_tag("children/7.jpg", width: '200px') %>
-    <%= image_tag("children/8.png", width: '200px') %>
-    <%= image_tag("children/9.png", width: '200px') %>
-    <%= image_tag("children/10.png", width: '200px') %>
+ 
