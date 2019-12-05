@@ -1,7 +1,7 @@
 <h1><%= @child.name %></h1>
 
 <div style="width:400px; height:auto">  
-<%= image_tag(@child.image, style: 'width: 100%') %>
+<%= link_to image_tag(@child.image, style: 'width: 100%'), children_path %>
 </div>
 
 <h2>Age: <%= @child.age %></h2>
@@ -17,16 +17,14 @@
 
 </ul>
 
+<%if current_user and @toys.length > 0 %>
+<%= render 'donations/form' %>
+ <%elsif current_user and @toys.length == 0%>
+  <h3>All their wishes have come true!<h3>
+ <%else%>
+ <h3>You can make a donation by singing in!</h3>
+ <%end %>
 
-<h3>Would you like to make a donation today?</h3>
-
-<%= form_with model: @donation do |f| %>
-<input type ="hidden" id="user_id", name = "user_id" value= <%="#{current_user.id}"%>>
-<input type ="hidden" id="child_id", name = "child_id" value= <%="#{@child.id}"%>>
-<%= collection_select(:donation, :toy_id, @toys, :id, :name) %>  
-<%= f.text_area :message %>
-<%= f.submit "Create" %>
-<% end %><br>
 
 <h3>Messages: <h3>
 <ul>

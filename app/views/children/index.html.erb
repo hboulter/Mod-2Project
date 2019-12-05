@@ -4,7 +4,7 @@
 
 
 <%=link_to 'See our donators!', '/users'%><br>
-<br>
+<%= link_to 'Your profile', "/users/#{current_user.id}"%>
 
 <h1>Sponsor A Child</h1>
 
@@ -13,6 +13,9 @@
     <li><%= link_to child.name, child%></li>
     <%end%>
 </ul><br>
+
+
+
 
     <%= image_tag("children/1.png", width: '200px') %>
     <%= image_tag("children/2.jpg", width: '200px') %>
