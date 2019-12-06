@@ -1,24 +1,23 @@
-<%=link_to 'Add a new child', '/children/new'%><br>
-
-
-<%=link_to 'See our donators!', '/users'%><br>
-
 <%if current_user%>
 <%= link_to 'Your profile', "/users/#{current_user.id}"%>
 <%end%>
 
 <h1>Sponsor A Child</h1>
-
-<ul>
-    <%@children.each do |child|%>
-    <h4><%= child.name%> :</h4>
-    <div style="width:150px; height:auto">  
-        <%= link_to image_tag(child.image, style: 'width: 100%'), child %></tr>
+<% @children.each do |child| %>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=<%= link_to image_tag(child.image, style: 'width: 100%'), child %>
+        <div class="card-body">
+            <h2 class="card-title"><%= child.name %></h2>
+            <h5 class="card-text"><%= child.bio %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <h5><li class="list-group-item"><%= child.age %></li><h5>
+        </ul>
+        <div class="card-body">
+            <h5><a href="#" class="card-link">Click to Donate!</a></h5>
+        </div>
     </div>
-<br>
-    <%end%>
-</ul><br>
-
+<% end %>
 
 
  
