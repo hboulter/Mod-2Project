@@ -19,7 +19,7 @@ class ChildrenController < ApplicationController
 
     def new
       if current_user
-        if is_admin?
+        if admin?
           @donation = Donation.new
           @child = Child.new
         else
@@ -51,7 +51,7 @@ class ChildrenController < ApplicationController
         params.require(:child).permit(:name, :age, :bio, :image)
     end 
 
-    def is_admin?
+    def admin?
       current_user.username == 'Admin'
     end 
 

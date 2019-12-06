@@ -1,20 +1,30 @@
 <h1>Donations</h1>
 <ul>
-<% if (@current_user.id == params[:id].to_i) and @user_donations.size > 0 %>
+<% if !current_user && @user_donations.length == 0%>
+    <p>They have not made any donations just yet!<p>
+    <%elsif !current_user && @user_donations.length > 0 %>
+    <p>Here is what <%@username%> has donated: </p>
+    <% @user_donations.each do |donation| %>
+    <li><%=donation.child.name %> has recieved a <%= donation.toy.name %>!</li>
+    <%end%>
+  <%elsif current_user.id == params[:id].to_i and @user_donations.size > 0 %>
     <h3>Here is what you have donated!<h3>
     <% @user_donations.each do |donation| %>
     <li><%= donation.toy.name %></li>
-    <% end  %> 
+    <%end %>
+    <%elsif current_user.id == params[:id].to_i and @user_donations.size == 0 %>
+     <p>You have not made a donation, yet. Jerk!<p><br>
+    <%= link_to 'Donate Now', children_path %>
     <%elsif current_user and @user_donations.size > 0 %>
      <h3>Here is what <%=@username%> has donated!<h3>
     <% @user_donations.each do |donation| %>
-    <li><%=donation.child.name %> has recieved a <%= donation.toy.name %> from <%= donation.user.username%>! </li>
+    <li><%=donation.child.name %> has recieved a <%= donation.toy.name %>!</li>
     <%end%>
-    <%elsif !(@current_user.id == params[:id].to_i) and @user_donations.size == 0%>
-    <p>They have not made any donations just yet!<p>
 <% else %>
-    <p>You have not made a donation, yet. Jerk!<p><br>
+    <p>No donation has been made yet!</p>
     <%= link_to 'Donate Now', children_path %>
 <% end %>
 </ul>
+
+
 
