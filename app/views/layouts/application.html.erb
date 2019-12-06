@@ -18,20 +18,31 @@
       
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000">Home</a>
+          <a class="nav-link"<%=link_to "Home", children_path%>
         </li>
+        <%if current_user%>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/users/#{current_user.id}">Profile</a>
+          <a class="nav-link"<%=link_to current_user.username, user_path(current_user.id)%>
         </li>
+        <%end%>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/sign_up">Sign Up</a>
+          <a class="nav-link"<%=link_to "Sponsors", users_path%>
         </li>
+         <%if current_user%>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/sign_in">Log In</a>
+          <a class="nav-link" <%= link_to "Sign out", logout_path, method: :delete %>
         </li>
+        <%else%>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/users">Sponsors</a>
+          <a class="nav-link"<%=link_to "Login",sign_in_path%>
         </li>
+        <%end%>
+        <%if !current_user%>
+        <li class="nav-item">
+          <a class="nav-link" <%=link_to "Sign up", sign_up_path%>
+        </li>
+        <%end%>
+        </ul>
     </nav>
   <style>
     body {
@@ -43,13 +54,6 @@
         font-weight: 400;
     }
 </style>
-    
-
-        <header>
-      <% if signed_in? %>
-        <%= button_to 'Sign out', sign_out_path, method: :delete %>
-      <% end %>
-    </header>
 
 
 
@@ -68,3 +72,23 @@
        
   </body>
 </html>
+
+
+
+<%# <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/users/">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/sign_up">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/sign_in">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/users">Sponsors</a>
+        </li>
+        </ul> %>
