@@ -4,21 +4,27 @@
 
 
 <h1>Sponsor A Child</h1>
+<div class="container">
+    <div class="row">
         <% @children.each do |child| %>
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" <%= image_tag(child.image, style: 'width: 100%') %>
-        <div class="card-body">
-            <h2 class="card-title"><%= child.name %></h2>
-            <h5 class="card-text"><%= child.bio %></h5>
-        </div>
-        <ul class="list-group list-group-flush">
-        <h5><li class="list-group-item"><%= child.age %></li><h5>
-        </ul>
-        <div class="card-body">
-        <h5><%= link_to "Click to Donate!", child%></h5>
-        </div>
-        </div>
+            <div class='col-md-4' >
+                <div class="card" style="width: 18rem; margin: 0 auto;">
+                    <img class="card-img-top" <%= image_tag(child.image, style: 'width: 100%') %>
+                    <div class="card-body">
+                        <h2 class="card-title"><%= child.name %></h2>
+                        <h5 class="card-text"><%= child.bio %></h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><h5><%= child.age %><h5></li>
+                    </ul>
+                    <div class="card-body">
+                        <h5><%= link_to "Click to Donate!", child%></h5>
+                    </div>
+                </div>
+            </div>
         <% end %>
+    </div>
+</div>
 
 
  

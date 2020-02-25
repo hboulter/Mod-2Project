@@ -3,18 +3,19 @@
 <div style="width:400px; height:auto">  
 <%= link_to image_tag(@child.image, style: 'width: 100%'), children_path %>
 </div>
-
+<br>
 <h2>Age:<br> <%= @child.age %></h2>
+<br>
 <h2>Bio:<br> <%= @child.bio %></h2>
+<br>
 
-
-<ul>
+<h2>Wishlist:</h2>
+<ul style="list-style-type:none;">
   <% @toys.each do |toy|  %>
   <li>
   <%= link_to toy.name, toy.link %>
   </li>
   <%end%>
-
 </ul>
 
 <%if current_user and @toys.length > 0 %>
@@ -22,12 +23,12 @@
  <%elsif current_user and @toys.length == 0%>
   <h3>All their wishes have come true!<h3>
  <%else%>
- <h3>You can make a donation by singing in!</h3>
+ <h3>You can make a donation by signing in!</h3>
  <%end %>
-
+<br>
 
 <h3>Messages: <h3>
-<ul>
+<ul style="list-style-type:none;">
  <% @child_donations.each do|cd|%>
  <% donator = User.all.find{|u| u.id == cd.user_id}%>
  <li>
